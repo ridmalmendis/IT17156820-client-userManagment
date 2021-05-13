@@ -3,13 +3,13 @@
  
 gb.sql - Database file
 
-server side cole link - 
+server side clone link - https://github.com/ridmalmendis/IT17156820-server-GadgetBudget.git
 
 
 
 1.import 'gb.sql' into phpMyAdmin
  
-2.colne the server side from the cole link
+2.colne the server side using the clone link(impot it in to eclips IDE > give maven update> add tomcat version 10 server).
 
 3. run html files 
 
