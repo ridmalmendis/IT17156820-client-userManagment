@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Option</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <style>
+        .btn-block {
+            margin: 10px;
+            width: 100%;
+            padding: 10px
+            
+        }
+
+
+        .card{
+            max-width: 500px;
+            margin: auto;
+            margin-top: 3%;
+            opacity: 0.8;
+        }
+    
+        
+        body {
+            background-image: url('images/cropped-mandala-gold.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header mb-5">
+        
+        <div class="header-title text-center text-dark pb-5">
+            
+            <img src="images/gb_logo.png" class="mb-5" width="330" height="100">
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <div class="card p-5">
+                <div class="button-block">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-bs-toggle="modal"
+                        data-bs-target="#sellerAddModal">Sign Up as a Seller</button></br>
+        
+                    <button type="button" class="btn btn-outline-dark btn-lg btn-block" data-bs-toggle="modal"
+                        data-bs-target="#buyerAddModal">Sign Up as a Buyer</button></br>
+        
+                    <button type="button" class="btn btn-outline-success btn-lg btn-block" data-bs-toggle="modal"
+                        data-bs-target="#fundraiserAddModal">Sign Up as a Fundraiser</button></br>
+                </div>
+            </div>
+        </div>
+        
+        
+
+    </div>
+    
+    
+
+    <!-- Add Seller Modal -->
+    <div class="modal fade" id="sellerAddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="modelTitle"> Sign Up
+                        <!-- Sign up or Update text goes here--> <span class="badge bg-info">as
+                            Seller</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Company
+                                Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtCompanyName" required>
+                                <!-- company name -->
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Contact</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtContact" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Username</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtUsername" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control form-control-sm" id="txtPassword" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btnModelAddSeller" class="btn btn-info btn-sm">Sign Up</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Fundraiser Modal -->
+    <div class="modal fade" id="buyerAddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="modelTitle"> Sign Up
+                        <!-- Sign up or Update text goes here--> <span class="badge bg-dark">as
+                            Buyer</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">First
+                                Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtFirstNameB" required>
+                                
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Last
+                                Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtLastNameB" required>
+                                
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Contact</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtContactB" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Username</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtUsernameB" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control form-control-sm" id="txtPasswordB" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btnModelAddBuyer" class="btn btn-dark btn-sm">Sign Up</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Fundraiser Modal -->
+    <div class="modal fade" id="fundraiserAddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="modelTitle"> Sign Up
+                        <!-- Sign up or Update text goes here--> <span class="badge bg-success">as
+                            Fundraiser</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">First
+                                Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtFirstNameF" required>
+                                
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Last
+                                Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtLastNameF" required>
+                                
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Contact</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtContactF" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Username</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="txtUsernameF" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm"
+                                class="col-sm-4 col-form-label col-form-label-sm">Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control form-control-sm" id="txtPasswordF" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btnModelAddFundraiser" class="btn btn-success btn-sm">Sign Up</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- bootstrap js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+    </script>
+
+    <script src="scripts/register-option.js"></script>
+</body>
+
+</html>
